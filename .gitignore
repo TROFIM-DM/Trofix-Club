@@ -1,0 +1,23 @@
+# Ignore rules for GIT (github.com, bitbucket.com, etc.)
+
+/vendor
+/.dn
+/src_generated
+/src/JPHP-INF
+/src/.data
+/src/.system
+/src/.debug
+/src/assets
+/build
+/build.xml
+/build.gradle
+/settings.gradle
+/.gitattributes
+/info versions.txt
+
+*.log
+*.pid
+*.tmp
+*.sourcemap
+*.dnproject
+s

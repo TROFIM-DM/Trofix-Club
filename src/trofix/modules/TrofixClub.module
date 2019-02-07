@@ -1,0 +1,8 @@
+{
+  "props": {
+    "version": "1.0",
+    "author": "Дмитрий Трофимов",
+    "singleton": true
+  },
+  "components": []
+}
