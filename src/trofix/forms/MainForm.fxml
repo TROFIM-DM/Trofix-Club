@@ -8,7 +8,7 @@
             <Font name="Arciform Sans cyr-lat Regular" size="26"/>
           </font>
         </LabelEx>
-        <Data cursor="DEFAULT" enabled="1" id="data-labelApp" visible="1"/>
+        <Data cursor="DEFAULT" enabled="1" graphic="" id="data-labelApp" tooltipText="" visible="1"/>
         <ImageViewEx AnchorPane.rightAnchor="7" AnchorPane.topAnchor="19" autoSize="false" centered="false" focusTraversable="false" height="19" id="buttonOther" layoutX="414" layoutY="19" mosaic="false" mosaicGap="0" proportional="false" stretch="true" styleClass="" textFill="#000000" width="19">
           <font>
             <Font name="System Regular" size="12"/>
@@ -38,9 +38,9 @@
       <tabs>
         <Tab text="Приложения">
           <content>
-            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="96" prefWidth="31" styleClass="">
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="643" prefWidth="440" styleClass="">
               <children>
-                <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#00000000" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="panelApps" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="96" prefWidth="31" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#00000000" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="panelApps" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="643" prefWidth="440" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
                   <children>
                     <LabelEx AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelApps" layoutX="0" layoutY="0" prefHeight="40" prefWidth="440" styleClass="label " text="     ВСЕ ПРИЛОЖЕНИЯ" textAlignment="CENTER" textFill="#666666" underline="false" wrapText="false">
                       <font>
@@ -55,7 +55,7 @@
                     </ListViewEx>
                     <Data cursor="DEFAULT" enabled="1" id="data-boxApps" visible="1"/>
                     <Data cursor="DEFAULT" enabled="1" id="data-labelAppsInfo" visible="1"/>
-                    <LabelEx AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelAppsInfo" layoutX="0" layoutY="40" prefHeight="56" prefWidth="440" styleClass="label " text="Trofix Club создан Дмитрием Трофимовым.&#10;Все приложения разработчика можно загрузить здесь." textAlignment="CENTER" textFill="#4d4d4d" underline="false" wrapText="false">
+                    <LabelEx AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelAppsInfo" layoutX="0" layoutY="587" prefHeight="56" prefWidth="440" styleClass="label " text="Trofix Club создан Дмитрием Трофимовым.&#10;Все приложения разработчика можно загрузить здесь." textAlignment="CENTER" textFill="#4d4d4d" underline="false" wrapText="false">
                       <font>
                         <Font name="Segoe UI" size="13"/>
                       </font>
@@ -72,8 +72,35 @@
         </Tab>
         <Tab text="Новости">
           <content>
-            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="0" prefWidth="0" styleClass="">
-              <children/>
+            <AnchorPane focusTraversable="false" id="" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="643" prefWidth="440" styleClass="">
+              <children>
+                <Panel AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" backgroundColor="#00000000" borderColor="#c0c0c0" borderRadius="0" borderStyle="SOLID" borderWidth="0" focusTraversable="false" id="panelNews" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="643" prefWidth="440" styleClass="" titleColor="#333333" titleOffset="15" titlePosition="TOP_LEFT">
+                  <children>
+                    <LabelEx AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" alignment="CENTER_LEFT" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelNews" layoutX="0" layoutY="0" prefHeight="40" prefWidth="440" styleClass="label " text="     ВСЕ НОВОСТИ" textAlignment="CENTER" textFill="#666666" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Segoe UI" size="12"/>
+                      </font>
+                    </LabelEx>
+                    <ListViewEx AnchorPane.bottomAnchor="55" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="39" editable="false" fixedCellSize="-1" focusTraversable="false" id="boxNews" layoutX="0" layoutY="39" prefHeight="549" prefWidth="440" styleClass="list-view list-news ">
+                      <items xmlns:fx="http://javafx.com/fxml">
+                        <FXCollections fx:factory="observableArrayList"/>
+                      </items>
+                    </ListViewEx>
+                    <LabelEx AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" alignment="CENTER" autoSize="false" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="labelNewsInfo" layoutX="0" layoutY="587" prefHeight="56" prefWidth="440" styleClass="label " text="Trofix Club создан Дмитрием Трофимовым.&#10;Все новости разработчика можно узнать здесь." textAlignment="CENTER" textFill="#4d4d4d" underline="false" wrapText="false">
+                      <font>
+                        <Font name="Segoe UI" size="13"/>
+                      </font>
+                    </LabelEx>
+                    <Data cursor="DEFAULT" enabled="1" id="data-labelNews" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-boxNews" visible="1"/>
+                    <Data cursor="DEFAULT" enabled="1" id="data-labelNewsInfo" visible="1"/>
+                  </children>
+                  <titleFont>
+                    <Font name="System Regular" size="12"/>
+                  </titleFont>
+                </Panel>
+                <Data cursor="DEFAULT" enabled="1" id="data-panelNews" visible="1"/>
+              </children>
             </AnchorPane>
           </content>
         </Tab>

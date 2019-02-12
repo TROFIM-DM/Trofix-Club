@@ -1,7 +1,7 @@
 <?php
 namespace trofix\scripts\design;
 
-use trofix, std, gui;
+use trofix, std, gui, framework;
 
 /**
  * Класс для работы с Design списка приложений.
@@ -29,7 +29,7 @@ class DesignApp
         $boxIcon = new UXVBox([$imageIcon]);
         $boxIcon->classes->add('itemApp-icon');
         
-        $labelTitle = new UXLabel($objectInfo['title']);
+        $labelTitle = new UXLabel(str_replace('-', ' ', $objectInfo['title']));
         $labelTitle->wrapText = true;
         $labelTitle->classes->add('itemApp-title');
         
@@ -38,7 +38,6 @@ class DesignApp
         $labelDescription->width = 216;
         $labelDescription->classes->add('itemApp-description');
         app()->getForm(MainForm)->observer('width')->addListener(function ($o, $n) use ($labelDescription) {
-            if (app()->getForm(MainForm)->width => 456)
                 $labelDescription->width = $n - 240;
         }); 
         
@@ -79,7 +78,6 @@ class DesignApp
             $menuItem->text = 'Подробнее';
             $menuItem->on('action', function (UXEvent $e) use ($urlInfo) {
                 browse($urlInfo);
-                //app()->form(MainForm)->toast('Происходит редирект...');
             });
             
             $contextMenu->items->add($menuItem);
@@ -89,7 +87,11 @@ class DesignApp
         
         $item = new UXVBox([new UXSeparator(), $GUI]);
         
-        app()->getForm(MainForm)->boxApps->items->add($item);
+        uiLater(function () use ($item) {
+            app()->getForm(MainForm)->boxApps->items->add($item);
+            if (app()->getForm(MainForm)->boxApps->items->count() == app()->getForm(MainForm)->boxApps->data('count'))
+                app()->getForm(MainForm)->preloaderApps->hide();
+        });
     }
     
 }

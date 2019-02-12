@@ -11,6 +11,7 @@
 /build
 /build.xml
 /build.gradle
+/others
 /settings.gradle
 /.gitattributes
 /info versions.txt
@@ -20,4 +21,3 @@
 *.tmp
 *.sourcemap
 *.dnproject
-s

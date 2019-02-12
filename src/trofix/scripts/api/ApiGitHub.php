@@ -1,7 +1,7 @@
 <?php
 namespace trofix\scripts\api;
 
-use httpclient;
+use gui, httpclient, trofix;
 
 /**
  * Класс API для GitHub.
@@ -52,9 +52,29 @@ class ApiGitHub
         $httpClient->getAsync(self::API_URL . $url, [], function (HttpResponse $response) use ($callback) {
             if ($response->isSuccess() && is_callable($callback))
                 $callback($response->body());
-            /*else if($response->body()['error'] == 'need_captcha')
-                self::getCaptcha($response->body());*/
+            elseif ($response->isServerError()) {
+                $buttonConnect = new UXMaterialButton();
+                $buttonConnect->id = 'btnApps_connect';
+                $buttonConnect->text = 'Повторить';
+                $buttonConnect->position = [146, 404];
+                $buttonConnect->width = 150;
+                $buttonConnect->cursor = 'HAND';
+                $buttonConnect->on('action', function (UXEvent $e) {
+                    $e->sender->free();
+                    app()->getForm(MainForm)->updateApps();
+                });
+                app()->getForm(MainForm)->preloaderApps->observer('width')->addListener(function ($o, $n) use ($buttonConnect) {
+                    $buttonConnect->x = $buttonConnect->x + (($n - $o) / 2);
+                });
+                app()->getForm(MainForm)->preloaderApps->observer('height')->addListener(function ($o, $n) use ($buttonConnect) {
+                    $buttonConnect->y = $buttonConnect->y + (($n - $o) / 2);
+                });
+                app()->getForm(MainForm)->preloaderApps->add($buttonConnect);
+                
+                //app()->getForm(MainForm)->toast('Нет подключения к Интернету...', 3000);
+            }
         });
         $httpClient->free();
     }
+    
 }
